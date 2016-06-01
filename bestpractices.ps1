@@ -141,7 +141,7 @@ foreach ($esx in $hosts)
         }
         if ($esx.Version -like "6.0.*")
         { 
-            $enableblockdelete = ($esx | Get-AdvancedSetting -Name VMFS3.EnableBlockDelete).Value
+            $enableblockdelete = ($esx | Get-AdvancedSetting -Name VMFS3.EnableBlockDelete)
             if ($enableblockdelete.Value -eq 0)
             {
                 add-content $logfile "EnableBlockDelete is currently disabled. Enabling..."
